@@ -15,7 +15,7 @@ function App() {
   // Método que consulta a API
   const getLivros = async (search) => {
     setCarregando(true);
-     const resposta = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${search}`);
+     const resposta = await fetch (`https://www.googleapis.com/books/v1/volumes?q=inauthor:${search} `);
      const dados = await resposta.json();
 
      setLivros(dados.items.map((livro) => {
@@ -48,7 +48,7 @@ function App() {
       <h4>Lista de Livros</h4>
       }
 
-     <InforLivro livros={livros} busca= {setBusca} getLivros={getLivros}/>
+     <InforLivro livros={livros} setBusca= {setBusca} busca={busca}getLivros={getLivros}/>
 
       
       </>

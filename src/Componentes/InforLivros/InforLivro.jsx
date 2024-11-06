@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-function  InforLivro ({livros,setBusca,getLivros}){
+function  InforLivro ({livros,setBusca,getLivros,busca}){
     const input = useRef();
     return (
         <>
